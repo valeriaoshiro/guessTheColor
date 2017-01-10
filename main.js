@@ -1,9 +1,11 @@
 var colors = [];
 var squares = document.querySelectorAll('.square');
 var $squares = $('.square');
+var $resetBtn = $('.reset');
 var winnerColor = 0; 
 
 function makeRandomColors(numOfSquares){
+	colors = [];
 	for(var i = 0; i < numOfSquares; i++){
 		var one = Math.floor(Math.random() * 256);
 		var two = Math.floor(Math.random() * 256);
@@ -31,9 +33,17 @@ function init(){
 
 init();
 
-$squares.on('click', function(event){
+$squares.on('click', function(){
 	if($(this).css('background-color') === colors[winnerColor]){
 		$squares.css('background', colors[winnerColor]);
 	}
-	
+	else {
+		$(this).css('background', 'white');
+	}
+});
+
+$resetBtn.on('click', function(){
+	makeRandomColors(6);
+	makeRandomWinner();
+	fillSquares();
 });

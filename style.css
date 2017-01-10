@@ -3,3 +3,7 @@
 	height: 100px;
 	display: inline-block;
 }
+
+span {
+	text-transform: uppercase;
+}
