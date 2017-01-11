@@ -33,7 +33,6 @@ span {
 	margin-bottom: 25px;
 }
 button {
-	/*display: inline-block;*/
 	background: none;
 	border: none;
 	color: #0088B5;
@@ -72,4 +71,14 @@ p {
 	padding-bottom: 30%;
 	margin: 1.66%;
 	border-radius: 10%;
+}
+
+@media only screen 
+  and (max-device-width: 736px) { 
+  	span {
+		font-size: 1em;
+	}
+	button, p {
+		font-size: 12px;
+	}
 }
