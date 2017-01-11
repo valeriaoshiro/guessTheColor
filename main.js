@@ -7,6 +7,7 @@ var $easyBtn = $('.easy');
 var $hardBtn = $('.hard');
 var $h1 = $('h1');
 var winnerColor = 0; 
+var gameMode = 6;
 
 function makeRandomColors(numOfSquares){
 	colors = [];
@@ -41,7 +42,7 @@ function reset(numOfSquares){
 }
 
 function init(){
-	reset(6);
+	reset(gameMode);
 }
 
 init();
@@ -56,23 +57,29 @@ $squares.on('click', function(){
 		$squares.css('background', colors[winnerColor]);
 		$h1.css('background', colors[winnerColor]);
 		$resetBtn.text('Play Again?');
-		$feedback.text('Correct');
+		$feedback.text('Correct!');
 	}
 	//else, incorrect guess, keep guessing
 	else {
-		$(this).css('background', 'white');
+		$(this).css('background', '#2D373B');
 		$feedback.text('Try Again');
 	}
 });
 
 $resetBtn.on('click', function(){ 
-	reset(6);
+	reset(gameMode);
 });
 
 $easyBtn.on('click', function(){
-	reset(3);
+	gameMode = 3;
+	reset(gameMode);
+	$(this).toggleClass('selected');
+	$hardBtn.toggleClass('selected');
 });
 
 $hardBtn.on('click', function(){
-	reset(6);
+	gameMode = 6;
+	reset(gameMode);
+	$(this).toggleClass('selected');
+	$easyBtn.toggleClass('selected');
 });
