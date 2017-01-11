@@ -18,6 +18,7 @@ body {
 h1 {
 	color: #fff;
 	padding: 30px 0;
+	transition: background 0.5s;
 }
 span {
 	text-transform: uppercase;
@@ -70,6 +71,7 @@ p {
 	padding-bottom: 30%;
 	margin: 1.66%;
 	border-radius: 10%;
+	transition: background 0.5s;
 }
 
 @media only screen 
